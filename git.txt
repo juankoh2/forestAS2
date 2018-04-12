@@ -1,0 +1,11 @@
+extract the first col
+type is a label
+clf = clf.fit(attributes dataframe, first col-labels)
+
+pull : 
+git pull
+
+push :
+git add .
+git commit -m "push"
+git push
