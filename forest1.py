@@ -13,17 +13,7 @@ label = le.fit_transform(training_labels)
 from sklearn.ensemble import RandomForestClassifier
 
 clf = RandomForestClassifier(n_estimators = 3)
-# clf = clf.fit(mydataframe, label)
-
-import graphviz
-dot_data = tree.export_graphviz(clf, out_file=None,
-feature_names = mydataframe.columns,
-class_names=["Sugi","Hinoki","mixed deciduous","non-forest land"],
-filled=True, rounded=True,
-special_characters=True)
-
-graph = graphviz.Source(dot_data)
-graph.view('image17')
+clf = clf.fit(mydataframe, label)
 
 import numpy as np
 
@@ -48,3 +38,4 @@ print (confusion_matrix(target,prediction))
 
 
 
+print(iris.target_names[prediction])

@@ -25,7 +25,6 @@ clf = clf.fit(iris.data, iris.target)
 prediction = clf.predict(irisTest)
 print(iris.target_names[prediction])
 
-print(clf.estimators_)
 
 # nb = GaussianNB()
 # nb = nb.fit(iris.data, iris.target)
