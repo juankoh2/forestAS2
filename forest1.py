@@ -10,8 +10,10 @@ from sklearn import preprocessing
 le = preprocessing.LabelEncoder()
 label = le.fit_transform(training_labels)
 
-clf = tree.DecisionTreeClassifier(max_depth=4, criterion="entropy")
-clf = clf.fit(mydataframe, label)
+from sklearn.ensemble import RandomForestClassifier
+
+clf = RandomForestClassifier(n_estimators = 3)
+# clf = clf.fit(mydataframe, label)
 
 import graphviz
 dot_data = tree.export_graphviz(clf, out_file=None,
@@ -31,15 +33,18 @@ prediction = clf.predict(myTestData)
 target = myTest.iloc[:,0]
 target = le.fit_transform(target)
 
+
+print(clf.estimators_)
+
 from sklearn.metrics import accuracy_score, confusion_matrix
 print (accuracy_score(target,prediction))
 print (confusion_matrix(target,prediction))
 
-for i in range(len(prediction))  :
-    if prediction[i] != target[i]:
-        print(clf.decision_path(myTest).todense()[i])
-        print('class:'+ target[i])
-        print('predict:' + prediction[i])
+# for i in range(len(prediction))  :
+#     if prediction[i] != target[i]:
+#         print(clf.decision_path(myTest).todense()[i])
+#         print('class:'+ target[i])
+#         print('predict:' + prediction[i])
 
 
 
