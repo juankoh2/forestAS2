@@ -38,4 +38,4 @@ print (confusion_matrix(target,prediction))
 
 
 
-print(iris.target_names[prediction])
+print(mydataframe.target_names[prediction])
