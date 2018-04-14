@@ -23,7 +23,7 @@ highestScore = 0
 
 for x in range(0,10000):
 	# n=100
-	n = int(math.floor(random.random()*40) + 1)
+	n = int(math.floor(random.random()*60) + 1)
 	clf = RandomForestClassifier(n_estimators = n)
 	# clf = GaussianNB()
 	clf = clf.fit(mydataframe, label)
@@ -57,8 +57,14 @@ for x in range(0,10000):
 	# 	highestN = n
 	# 	highestScore = accuracy_score(target,prediction)
 	tempScore = accuracy_score(target,prediction)
-	# if tempScore > 0.84:
+	# if tempScore > highestScore:
+	# 	highestScore = tempScore
+	# 	highestN = n
 	# 	print(n)
+	# 	print(highestScore)
+
+	if tempScore > 0.93:
+		print(n);
 		
 
 print(highestN)
