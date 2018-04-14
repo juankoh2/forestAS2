@@ -17,19 +17,37 @@ clf = RandomForestClassifier(n_estimators = 2)
 # clf = GaussianNB()
 clf = clf.fit(mydataframe, label)
 
-# import graphviz
-# dot_data = tree.export_graphviz(clf, out_file=None,
-# feature_names = mydataframe.columns,
-# class_names=["Sugi","Hinoki","mixed deciduous","non-forest land"],
-# filled=True, rounded=True,
-# special_characters=True)
+import graphviz
+dot_data = tree.export_graphviz(clf.estimators_[0], out_file=None,
+feature_names = mydataframe.columns,
+class_names=["Sugi","Hinoki","mixed deciduous","non-forest land"],
+filled=True, rounded=True, special_characters=True)
 
-# graph = graphviz.Source(dot_data)
-# graph.view('image17')
+graph = graphviz.Source(dot_data)
+graph.view('image17')
 
 import numpy as np
 
 myTest = pd.read_csv('training.csv')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 myTestData = myTest.iloc[:,1:28]
 prediction = clf.predict(myTestData)
 target = myTest.iloc[:,0]
