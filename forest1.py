@@ -22,10 +22,9 @@ import numpy as np
 highestN = 0
 highestScore = 0
 
-for x in range(0,1):
+for x in range(0,100):
 	# n=100
-	n = math.floor(random.random()*1000) + 1
-	
+	n = int(math.floor(random.random()*100) + 1)
 	clf = RandomForestClassifier(n_estimators = n)
 	# clf = GaussianNB()
 	clf = clf.fit(mydataframe, label)
@@ -54,8 +53,8 @@ for x in range(0,1):
 
 	# print(clf.estimators_)
 
-	print (accuracy_score(target,prediction))
-	print (confusion_matrix(target,prediction))
+	# print (accuracy_score(target,prediction))
+	# print (confusion_matrix(target,prediction))
 
 	# print(mydataframe.target_names[prediction])
 
