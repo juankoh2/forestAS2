@@ -1,7 +1,7 @@
 from sklearn import tree
 
 import pandas as pd
-mydata= pd.read_csv('training.csv')
+mydata= pd.read_csv('testing.csv')
 
 training_labels = mydata.iloc[:,0]
 mydataframe = mydata.iloc[:, 1:28]
@@ -40,7 +40,7 @@ for x in range(0,10000):
 	# 	graph = graphviz.Source(dot_data)
 	# 	graph.view('image' + str(x))
 
-	myTest = pd.read_csv('testing.csv')
+	myTest = pd.read_csv('training.csv')
 	myTestData = myTest.iloc[:,1:28]
 	prediction = clf.predict(myTestData)
 	target = myTest.iloc[:,0]
@@ -57,8 +57,8 @@ for x in range(0,10000):
 	# 	highestN = n
 	# 	highestScore = accuracy_score(target,prediction)
 	tempScore = accuracy_score(target,prediction)
-	if tempScore > 0.84:
-		print(n)
+	# if tempScore > 0.84:
+	# 	print(n)
 		
 
 print(highestN)
