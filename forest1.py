@@ -13,42 +13,30 @@ label = le.fit_transform(training_labels)
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import GaussianNB
 
-clf = RandomForestClassifier(n_estimators = 2, max_depth=2)
+n = 3;
+
+clf = RandomForestClassifier(n_estimators = n, max_depth=2)
 # clf = GaussianNB()
 clf = clf.fit(mydataframe, label)
 
 import graphviz
-dot_data = tree.export_graphviz(clf.estimators_[0], out_file=None,
-feature_names = mydataframe.columns,
-class_names=["Sugi","Hinoki","mixed deciduous","non-forest land"],
-filled=True, rounded=True,
-special_characters=True)
 
-graph = graphviz.Source(dot_data)
-graph.view('image3')
+for x in range(0,n):
+	dot_data = tree.export_graphviz(clf.estimators_[x], out_file=None,
+	feature_names = mydataframe.columns,
+	class_names=["Sugi","Hinoki","mixed deciduous","non-forest land"],
+	filled=True, rounded=True,
+	special_characters=True)
+
+	graph = graphviz.Source(dot_data)
+	graph.view('image' + x)
+
+
+
 
 import numpy as np
 
 myTest = pd.read_csv('training.csv')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 myTestData = myTest.iloc[:,1:28]
 prediction = clf.predict(myTestData)
 target = myTest.iloc[:,0]
