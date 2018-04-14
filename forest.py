@@ -35,11 +35,6 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 print (accuracy_score(target,prediction))
 print (confusion_matrix(target,prediction))
 
-for i in range(len(prediction))  :
-    if prediction[i] != target[i]:
-        print(clf.decision_path(myTest).todense()[i])
-        print('class:'+ target[i])
-        print('predict:' + prediction[i])
 
 
 

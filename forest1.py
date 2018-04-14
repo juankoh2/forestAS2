@@ -11,9 +11,21 @@ le = preprocessing.LabelEncoder()
 label = le.fit_transform(training_labels)
 
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import GaussianNB
 
-clf = RandomForestClassifier(n_estimators = 3)
+clf = RandomForestClassifier(n_estimators = 2)
+# clf = GaussianNB()
 clf = clf.fit(mydataframe, label)
+
+# import graphviz
+# dot_data = tree.export_graphviz(clf, out_file=None,
+# feature_names = mydataframe.columns,
+# class_names=["Sugi","Hinoki","mixed deciduous","non-forest land"],
+# filled=True, rounded=True,
+# special_characters=True)
+
+# graph = graphviz.Source(dot_data)
+# graph.view('image17')
 
 import numpy as np
 
@@ -23,19 +35,11 @@ prediction = clf.predict(myTestData)
 target = myTest.iloc[:,0]
 target = le.fit_transform(target)
 
-
-print(clf.estimators_)
+# print(clf.estimators_)
 
 from sklearn.metrics import accuracy_score, confusion_matrix
 print (accuracy_score(target,prediction))
 print (confusion_matrix(target,prediction))
 
-# for i in range(len(prediction))  :
-#     if prediction[i] != target[i]:
-#         print(clf.decision_path(myTest).todense()[i])
-#         print('class:'+ target[i])
-#         print('predict:' + prediction[i])
+# print(mydataframe.target_names[prediction])
 
-
-
-print(mydataframe.target_names[prediction])
