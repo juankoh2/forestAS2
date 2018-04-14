@@ -13,7 +13,6 @@ label = le.fit_transform(training_labels)
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import GaussianNB
 
-
 import math
 import random
 from sklearn.metrics import accuracy_score, confusion_matrix
@@ -41,10 +40,6 @@ for x in range(0,10000):
 	# 	graph = graphviz.Source(dot_data)
 	# 	graph.view('image' + str(x))
 
-
-
-
-
 	myTest = pd.read_csv('testing.csv')
 	myTestData = myTest.iloc[:,1:28]
 	prediction = clf.predict(myTestData)
@@ -57,8 +52,6 @@ for x in range(0,10000):
 	# print (confusion_matrix(target,prediction))
 
 	# print(mydataframe.target_names[prediction])
-
-
 	
 	# if highestScore < accuracy_score(target,prediction):
 	# 	highestN = n
@@ -67,7 +60,6 @@ for x in range(0,10000):
 	if tempScore > 0.84:
 		print(n)
 		
-
 
 print(highestN)
 print(highestScore)
