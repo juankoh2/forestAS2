@@ -13,9 +13,9 @@ label = le.fit_transform(training_labels)
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import GaussianNB
 
-n = 20;
+n = 12;
 
-clf = RandomForestClassifier(n_estimators = n, max_depth=4)
+clf = RandomForestClassifier(n_estimators = n)
 # clf = GaussianNB()
 clf = clf.fit(mydataframe, label)
 
