@@ -63,8 +63,8 @@ for x in range(0,10000):
 	# 	print(n)
 	# 	print(highestScore)
 
-	if tempScore > 0.93:
-		print(n);
+	if tempScore > 0.95:
+		print(n)
 		
 
 print(highestN)
