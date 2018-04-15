@@ -1,0 +1,37 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
+edge [fontname=helvetica] ;
+0 [label=<pred_minus_obs_H_b1 &le; 41.155<br/>gini = 0.744<br/>samples = 126<br/>value = [47, 50, 40, 61]<br/>class = non-forest land>, fillcolor="#d739e513"] ;
+1 [label=<pred_minus_obs_S_b6 &le; -1.06<br/>gini = 0.081<br/>samples = 31<br/>value = [0, 46, 1, 1]<br/>class = Hinoki>, fillcolor="#47e539f4"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<b9 &le; 70.0<br/>gini = 0.042<br/>samples = 30<br/>value = [0, 46, 1, 0]<br/>class = Hinoki>, fillcolor="#47e539f9"] ;
+1 -> 2 ;
+3 [label=<gini = 0.0<br/>samples = 29<br/>value = [0, 46, 0, 0]<br/>class = Hinoki>, fillcolor="#47e539ff"] ;
+2 -> 3 ;
+4 [label=<gini = 0.0<br/>samples = 1<br/>value = [0, 0, 1, 0]<br/>class = mixed deciduous>, fillcolor="#399de5ff"] ;
+2 -> 4 ;
+5 [label=<gini = 0.0<br/>samples = 1<br/>value = [0, 0, 0, 1]<br/>class = non-forest land>, fillcolor="#d739e5ff"] ;
+1 -> 5 ;
+6 [label=<b3 &le; 56.5<br/>gini = 0.674<br/>samples = 95<br/>value = [47, 4, 39, 60]<br/>class = non-forest land>, fillcolor="#d739e520"] ;
+0 -> 6 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+7 [label=<pred_minus_obs_H_b4 &le; -12.51<br/>gini = 0.121<br/>samples = 39<br/>value = [0, 4, 0, 58]<br/>class = non-forest land>, fillcolor="#d739e5ed"] ;
+6 -> 7 ;
+8 [label=<gini = 0.0<br/>samples = 2<br/>value = [0, 4, 0, 0]<br/>class = Hinoki>, fillcolor="#47e539ff"] ;
+7 -> 8 ;
+9 [label=<gini = 0.0<br/>samples = 37<br/>value = [0, 0, 0, 58]<br/>class = non-forest land>, fillcolor="#d739e5ff"] ;
+7 -> 9 ;
+10 [label=<pred_minus_obs_H_b8 &le; 0.415<br/>gini = 0.518<br/>samples = 56<br/>value = [47, 0, 39, 2]<br/>class = Sugi>, fillcolor="#e581392a"] ;
+6 -> 10 ;
+11 [label=<pred_minus_obs_S_b6 &le; 0.595<br/>gini = 0.049<br/>samples = 25<br/>value = [0, 0, 39, 1]<br/>class = mixed deciduous>, fillcolor="#399de5f8"] ;
+10 -> 11 ;
+12 [label=<gini = 0.0<br/>samples = 24<br/>value = [0, 0, 39, 0]<br/>class = mixed deciduous>, fillcolor="#399de5ff"] ;
+11 -> 12 ;
+13 [label=<gini = 0.0<br/>samples = 1<br/>value = [0, 0, 0, 1]<br/>class = non-forest land>, fillcolor="#d739e5ff"] ;
+11 -> 13 ;
+14 [label=<b2 &le; 35.0<br/>gini = 0.041<br/>samples = 31<br/>value = [47, 0, 0, 1]<br/>class = Sugi>, fillcolor="#e58139fa"] ;
+10 -> 14 ;
+15 [label=<gini = 0.0<br/>samples = 1<br/>value = [0, 0, 0, 1]<br/>class = non-forest land>, fillcolor="#d739e5ff"] ;
+14 -> 15 ;
+16 [label=<gini = 0.0<br/>samples = 30<br/>value = [47, 0, 0, 0]<br/>class = Sugi>, fillcolor="#e58139ff"] ;
+14 -> 16 ;
+}

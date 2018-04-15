@@ -1,0 +1,33 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
+edge [fontname=helvetica] ;
+0 [label=<pred_minus_obs_H_b8 &le; 0.35<br/>gini = 0.741<br/>samples = 121<br/>value = [55, 48, 35, 60]<br/>class = non-forest land>, fillcolor="#d739e509"] ;
+1 [label=<pred_minus_obs_S_b2 &le; 6.58<br/>gini = 0.148<br/>samples = 23<br/>value = [2, 0, 35, 1]<br/>class = mixed deciduous>, fillcolor="#399de5ea"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<pred_minus_obs_H_b9 &le; -11.005<br/>gini = 0.102<br/>samples = 22<br/>value = [2, 0, 35, 0]<br/>class = mixed deciduous>, fillcolor="#399de5f0"] ;
+1 -> 2 ;
+3 [label=<gini = 0.0<br/>samples = 21<br/>value = [0, 0, 35, 0]<br/>class = mixed deciduous>, fillcolor="#399de5ff"] ;
+2 -> 3 ;
+4 [label=<gini = 0.0<br/>samples = 1<br/>value = [2, 0, 0, 0]<br/>class = Sugi>, fillcolor="#e58139ff"] ;
+2 -> 4 ;
+5 [label=<gini = 0.0<br/>samples = 1<br/>value = [0, 0, 0, 1]<br/>class = non-forest land>, fillcolor="#d739e5ff"] ;
+1 -> 5 ;
+6 [label=<pred_minus_obs_H_b1 &le; 41.34<br/>gini = 0.664<br/>samples = 98<br/>value = [53, 48, 0, 59]<br/>class = non-forest land>, fillcolor="#d739e50e"] ;
+0 -> 6 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+7 [label=<pred_minus_obs_S_b4 &le; -2.62<br/>gini = 0.042<br/>samples = 27<br/>value = [0, 46, 0, 1]<br/>class = Hinoki>, fillcolor="#47e539f9"] ;
+6 -> 7 ;
+8 [label=<gini = 0.0<br/>samples = 26<br/>value = [0, 46, 0, 0]<br/>class = Hinoki>, fillcolor="#47e539ff"] ;
+7 -> 8 ;
+9 [label=<gini = 0.0<br/>samples = 1<br/>value = [0, 0, 0, 1]<br/>class = non-forest land>, fillcolor="#d739e5ff"] ;
+7 -> 9 ;
+10 [label=<b2 &le; 31.0<br/>gini = 0.516<br/>samples = 71<br/>value = [53, 2, 0, 58]<br/>class = non-forest land>, fillcolor="#d739e515"] ;
+6 -> 10 ;
+11 [label=<pred_minus_obs_H_b4 &le; -13.71<br/>gini = 0.064<br/>samples = 38<br/>value = [0, 2, 0, 58]<br/>class = non-forest land>, fillcolor="#d739e5f6"] ;
+10 -> 11 ;
+12 [label=<gini = 0.0<br/>samples = 1<br/>value = [0, 2, 0, 0]<br/>class = Hinoki>, fillcolor="#47e539ff"] ;
+11 -> 12 ;
+13 [label=<gini = 0.0<br/>samples = 37<br/>value = [0, 0, 0, 58]<br/>class = non-forest land>, fillcolor="#d739e5ff"] ;
+11 -> 13 ;
+14 [label=<gini = 0.0<br/>samples = 33<br/>value = [53, 0, 0, 0]<br/>class = Sugi>, fillcolor="#e58139ff"] ;
+10 -> 14 ;
+}
