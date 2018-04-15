@@ -1,4 +1,4 @@
-from sklearn import tree
+cfrom sklearn import tree
 
 import pandas as pd
 mydata= pd.read_csv('training.csv')
