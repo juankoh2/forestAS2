@@ -31,15 +31,15 @@ clf = clf.fit(mydataframe, label)
 
 import graphviz
 
-for x in range(0,n):
-	dot_data = tree.export_graphviz(clf.estimators_[x], out_file=None,
-	feature_names = mydataframe.columns,
-	class_names=["Sugi","Hinoki","mixed deciduous","non-forest land"],
-	filled=True, rounded=True,
-	special_characters=True)
+# for x in range(0,n):
+# 	dot_data = tree.export_graphviz(clf.estimators_[x], out_file=None,
+# 	feature_names = mydataframe.columns,
+# 	class_names=["Sugi","Hinoki","mixed deciduous","non-forest land"],
+# 	filled=True, rounded=True,
+# 	special_characters=True)
 
-	graph = graphviz.Source(dot_data)
-	graph.view('abd/imagea' + str(x))
+# 	graph = graphviz.Source(dot_data)
+# 	graph.view('abd/imagea' + str(x))
 
 
 
@@ -58,12 +58,12 @@ predictionArr=[]
 
 print (accuracy_score(target,prediction))
 
-for i in range(0,n):
-	predictionArr.append(clf.estimators_[i].predict(myTestData))
-	print(accuracy_score(target,predictionArr[i]))
-	print(clf.estimators_.feature_importances_)
+# for i in range(0,n):
+# 	predictionArr.append(clf.estimators_[i].predict(myTestData))
+# 	print(accuracy_score(target,predictionArr[i]))
+# 	print(clf.estimators_[0].feature_importances_)
 
-print(clf.feature_importances_)
+# print(clf.feature_importances_)
 
 print (confusion_matrix(target,prediction))
 
@@ -84,3 +84,11 @@ print (confusion_matrix(target,prediction))
 # print(highestScore)
 
 # print(clf.feature_importances_)
+
+
+nb = GaussianNB();
+
+nb=nb.fit(mydataframe, label)
+prediction = nb.predict(myTestData)
+print(accuracy_score(target,prediction))
+
